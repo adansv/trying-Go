@@ -1,16 +1,41 @@
 package main
 
 import (
-	pk "curso_golang_platzi/src/mypackage"
 	"fmt"
 )
 
+type pc struct {
+	ram   int
+	disk  int
+	brand string
+}
+func (mypc pc) ping(){
+	fmt.Println(mypc.brand, "Pong")
+}
+func (mypc *pc) duplicateRam(){
+	mypc.ram = mypc.ram*2
+}
+
+
 func main() {
-	var myCar pk.CarPublic
-	myCar.Brand = "ferrari"
-	myCar.Year = 2015
-	fmt.Println(myCar)
+	a := 50
+	b := &a
 
-	pk.PrintMessage("Hola tarola")
+	fmt.Println(b)
+	fmt.Println(*b)
 
+	*b = 100
+	fmt.Println(a)
+
+	mypc := pc{ram:16, disk:500, brand:"msi"}
+
+	fmt.Println(mypc)
+
+	mypc.ping()
+
+	fmt.Println(mypc)
+	mypc.duplicateRam()
+	fmt.Println("Updated", mypc)
+	
+	
 }
