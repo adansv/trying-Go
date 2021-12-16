@@ -42,15 +42,17 @@ func isPalindromo(wo string) {
 
 func main() {
 
-	slice := []string{"hola", "que", "haces"}
+	m := make(map[string]int)
+	m["Jose"] = 14
+	m["Pepito"] = 20
 
-	for i := range slice {
-		fmt.Println(i)
+	fmt.Println(m)
+
+	for i, v := range m{
+		fmt.Println(i, v)
 	}
-	//palidromos
 
-	var wo = "oEaraeo"
-
-	isPalindromo(wo)
+	value, yt := m["Pepito"]
+	fmt.Println(value, yt)
 
 }
