@@ -1,18 +1,16 @@
 package main
 
-import "fmt"
-
-type car struct {
-	brand string
-	year int
-}
+import (
+	pk "curso_golang_platzi/src/mypackage"
+	"fmt"
+)
 
 func main() {
-	mycar := car{brand:"ford", year: 2020}
+	var myCar pk.CarPublic
+	myCar.Brand = "ferrari"
+	myCar.Year = 2015
+	fmt.Println(myCar)
 
-	fmt.Println(mycar)
+	pk.PrintMessage("Hola tarola")
 
-	var otherCar car
-	otherCar.brand = "mercedes"
-	fmt.Println(otherCar)
 }
