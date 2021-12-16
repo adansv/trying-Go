@@ -1,58 +1,18 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
-/*
-func normalFuction(message string) {
-	fmt.Println(message)
-}
-func tripleArgument(a int, b int, c string) {
-	fmt.Println(a, b, c)
-}
-func doubleReturn(a int) (c, d int) {
-	return a, a * 2
-}
-func isPalindromo(text string) {
-	string b
-	textReverse += string(text[i])
-	for i := len(a) - 1; i >= 0; i++ {
-
-	}
-}
-*/
-func isPalindromo(wo string) {
-	wo = strings.ToLower(wo)
-	fmt.Println(wo)
-	cond := true
-	//fmt.Println("this: ", string((wo)[2]))
-	for i := 0; i < len(wo); i++ {
-		aux := wo
-
-		if wo[i] != aux[(len(wo)-i)-1] {
-			cond = false
-			break
-		}
-
-	}
-	fmt.Println("this: ", cond)
+type car struct {
+	brand string
+	year int
 }
 
 func main() {
+	mycar := car{brand:"ford", year: 2020}
 
-	m := make(map[string]int)
-	m["Jose"] = 14
-	m["Pepito"] = 20
+	fmt.Println(mycar)
 
-	fmt.Println(m)
-
-	for i, v := range m{
-		fmt.Println(i, v)
-	}
-
-	value, yt := m["Pepito"]
-	fmt.Println(value, yt)
-
+	var otherCar car
+	otherCar.brand = "mercedes"
+	fmt.Println(otherCar)
 }
