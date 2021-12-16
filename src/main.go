@@ -4,22 +4,37 @@ import (
 	"fmt"
 )
 
-type pc struct {
-	ram   int
-	disk  int
-	brand string
+type figuras2D interface {
+	area() float64
+}
+type cuadrado struct {
+	base float64
 }
 
-func (mypc pc) String() string {
-	return fmt.Sprintf("Tengo %d GB de RAM, %d GB en disk y es una %s", mypc.ram, mypc.disk, mypc.brand)
+type rectangulo struct {
+	base   float64
+	altura float64
+}
+
+func (c cuadrado) area() float64 {
+	return c.base * c.base
+}
+func (r rectangulo) area() float64 {
+	return r.base * r.altura
+}
+
+func calcular(f figuras2D) {
+	fmt.Println("Area: ", f.area())
 }
 
 func main() {
+	myCuadrado := cuadrado{base: 2}
+	myRectangulo := rectangulo{base: 2, altura: 4}
 
-	mypc := pc{ram: 16, disk: 500, brand: "msi"}
+	calcular(myCuadrado)
+	calcular(myRectangulo)
 
-	fmt.Println(mypc)
-
-	fmt.Println("Updated", mypc)
-
+	//Lista de interfaces
+	myInterface := []interface{}{"Holis", 12, 4.90}
+	fmt.Println(myInterface...)
 }
