@@ -1,0 +1,2 @@
+# trying-Go
+learning go
